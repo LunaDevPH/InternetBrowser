@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name" translatable="false">Internet Browser</string>
+    <string name="hint_enter_url">Enter URL</string>
+    <string name="btn_go">Search</string>
+    
+    <!-- AI Chat -->
+    <string name="ai_chat_title">Chat With AI</string>
+    <string name="hint_ask_ai">Ask AI anything...</string>
+    <string name="error_ai_busy">Model is busy/rate-limited. Please wait 10-20 seconds and try again.</string>
+    <string name="error_ai_empty">AI returned empty response.</string>
+    <string name="msg_copied">Copied to clipboard</string>
+    
+    <!-- Error Page -->
+    <string name="error_title">Error</string>
+    <string name="error_default_msg">Could not load the page. Please check your internet connection.</string>
+    <string name="btn_retry">Retry</string>
+    
+    <!-- Browser Controls -->
+    <string name="action_back">Back</string>
+    <string name="action_forward">Forward</string>
+    <string name="action_refresh">Refresh</string>
+    <string name="action_ai">AI</string>
+    <string name="action_history">History</string>
+    <string name="action_downloads">Downloads</string>
+
+    <!-- History -->
+    <string name="history_title">Browsing History</string>
+    <string name="btn_export_csv">Export to CSV</string>
+    <string name="msg_history_exported">History exported to CSV</string>
+
+    <!-- Downloads -->
+    <string name="downloads_title">Downloads</string>
+    <string name="no_downloads">No downloads yet</string>
+
+    <!-- Start Page Tips -->
+    <string name="tip_search">Search the Web</string>
+    <string name="tip_find_content">Find Content on the Internet</string>
+    <string name="tip_privacy">Privacy-first Browser</string>
+    <string name="tip_fast">Fast and Secure Browsing</string>
+    <string name="tip_ai">Chat with Integrated AI</string>
+    <string name="tip_material">Beautiful Material You Design</string>
+    <string name="tip_history">Manage History Easily</string>
+    <string name="tip_no_collection">No Data Collection</string>
+    <string name="tip_no_tracking">No Tracking, Just Browsing</string>
+    <string name="tip_anonymous">Safe and Anonymous</string>
+
+    <!-- Suggestions -->
+    <string name="suggestion_google">Google</string>
+    <string name="suggestion_youtube">Youtube</string>
+    <string name="suggestion_wikipedia">Wikipedia</string>
+</resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Legacy Colors -->
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Mappings for existing theme/code logic -->
+    <color name="colorPrimary">@color/md_theme_primary</color>
+    <color name="colorPrimaryDark">@color/md_theme_primaryContainer</color>
+    <color name="colorAccent">@color/md_theme_secondary</color>
+
+    <!-- Updated Chat Bubbles using the new palette -->
+    <color name="chat_user_bg">@color/md_theme_primaryContainer</color>
+    <color name="chat_user_text">@color/md_theme_onPrimaryContainer</color>
+    <color name="chat_ai_bg">@color/md_theme_surfaceVariant</color>
+    <color name="chat_ai_text">@color/md_theme_onSurfaceVariant</color>
+
+    <!-- Material 3 Dynamic Palette -->
+    <color name="md_theme_primary">#83D2E3</color>
+    <color name="md_theme_onPrimary">#00363E</color>
+    <color name="md_theme_primaryContainer">#004E5A</color>
+    <color name="md_theme_onPrimaryContainer">#A2EEFF</color>
+    <color name="md_theme_secondary">#B1CBD1</color>
+    <color name="md_theme_onSecondary">#1C3439</color>
+    <color name="md_theme_secondaryContainer">#334A50</color>
+    <color name="md_theme_onSecondaryContainer">#CDE7ED</color>
+    <color name="md_theme_tertiary">#BCC5EB</color>
+    <color name="md_theme_onTertiary">#262F4D</color>
+    <color name="md_theme_tertiaryContainer">#3D4665</color>
+    <color name="md_theme_onTertiaryContainer">#DBE1FF</color>
+    <color name="md_theme_error">#FFB4AB</color>
+    <color name="md_theme_onError">#690005</color>
+    <color name="md_theme_errorContainer">#93000A</color>
+    <color name="md_theme_onErrorContainer">#FFDAD6</color>
+    <color name="md_theme_background">#0E1416</color>
+    <color name="md_theme_onBackground">#DEE3E5</color>
+    <color name="md_theme_surface">#0E1416</color>
+    <color name="md_theme_onSurface">#DEE3E5</color>
+    <color name="md_theme_surfaceVariant">#3F484A</color>
+    <color name="md_theme_onSurfaceVariant">#BFC8CB</color>
+    <color name="md_theme_outline">#899295</color>
+    <color name="md_theme_outlineVariant">#3F484A</color>
+    <color name="md_theme_scrim">#000000</color>
+    <color name="md_theme_inverseSurface">#DEE3E5</color>
+    <color name="md_theme_inverseOnSurface">#2B3133</color>
+    <color name="md_theme_inversePrimary">#006877</color>
+    <color name="md_theme_primaryFixed">#A2EEFF</color>
+    <color name="md_theme_onPrimaryFixed">#001F25</color>
+    <color name="md_theme_primaryFixedDim">#83D2E3</color>
+    <color name="md_theme_onPrimaryFixedVariant">#004E5A</color>
+    <color name="md_theme_secondaryFixed">#CDE7ED</color>
+    <color name="md_theme_onSecondaryFixed">#051F24</color>
+    <color name="md_theme_secondaryFixedDim">#B1CBD1</color>
+    <color name="md_theme_onSecondaryFixedVariant">#334A50</color>
+    <color name="md_theme_tertiaryFixed">#DBE1FF</color>
+    <color name="md_theme_onTertiaryFixed">#101A37</color>
+    <color name="md_theme_tertiaryFixedDim">#BCC5EB</color>
+    <color name="md_theme_onTertiaryFixedVariant">#3D4665</color>
+    <color name="md_theme_surfaceDim">#0E1416</color>
+    <color name="md_theme_surfaceBright">#343A3C</color>
+    <color name="md_theme_surfaceContainerLowest">#090F10</color>
+    <color name="md_theme_surfaceContainerLow">#171D1E</color>
+    <color name="md_theme_surfaceContainer">#1B2122</color>
+    <color name="md_theme_surfaceContainerHigh">#252B2C</color>
+    <color name="md_theme_surfaceContainerHighest">#303637</color>
+    
+    <!-- Contrast variants omitted for brevity, adding if needed -->
+</resources>
