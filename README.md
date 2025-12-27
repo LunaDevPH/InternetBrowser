@@ -27,5 +27,5 @@ A free, open-source, privacy-focused, and AI-powered web browser for Android. In
 This app is not distributed as prebuilt releases. To install it, you need to build it yourself:
 
 1. Clone the repository:  
-   ```bash
-   git clone https://github.com/username/fossai-browser.git
+   ```Windows Command Processor
+   git clone https://github.com/Tituswashere/InternetBrowser.git
