@@ -27,5 +27,5 @@ A free, open-source, privacy-focused, and AI-powered web browser for Android. In
 This app is not distributed as prebuilt releases. To install it, you need to build it yourself:
 
 1. Clone the repository:  
-   ```Windows Command Processor
+   ```cmd
    git clone https://github.com/Tituswashere/InternetBrowser.git
