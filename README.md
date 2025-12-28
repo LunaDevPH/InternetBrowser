@@ -1,4 +1,4 @@
-# Internet Browser
+# [Pre-Release] Internet Browser
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)  
 [![Android](https://img.shields.io/badge/Platform-Android-green.svg)]
