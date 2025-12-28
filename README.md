@@ -22,10 +22,13 @@ A free, open-source, privacy-focused, and AI-powered web browser for Android. In
 ---
 
 ## Installation
-
+### On the Releases
+Available but skill issue to you
 ### Build It Yourself
-This app is not distributed as prebuilt releases. To install it, you need to build it yourself:
-
 1. Clone the repository:  
-   ```cmd
+   ```bash
    git clone https://github.com/Tituswashere/InternetBrowser.git
+```
+2. Build it from Android Studio
+if u dont know, ask ai or gui Android Studio 
+
