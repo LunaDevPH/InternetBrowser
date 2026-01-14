@@ -40,7 +40,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AiChatActivity extends AppCompatActivity {
 
     private static final String TAG = "AiChatActivity";
-    private static final String OPENROUTER_API_KEY = "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";
+    private static final String OPENROUTER_API_KEY = "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";
     
     // Persistent messages
     private static final List<ChatAdapter.Message> globalMessages = new ArrayList<>();
@@ -121,7 +121,7 @@ public class AiChatActivity extends AppCompatActivity {
             String prompt = "Please analyze and summarize the following web page content from " + url + ":\n\n" + content;
             
             // Show a friendly message to the user in the UI
-            addMessage("Analyzing page: " + url, true);
+            addMessage("Analyze" + url, true);
             
             // Trigger AI request with the hidden full prompt
             performAiRequest(prompt);
@@ -165,7 +165,7 @@ public class AiChatActivity extends AppCompatActivity {
         addMessage("", false);
 
         OpenRouterService.Request request = new OpenRouterService.Request(
-                "google/gemini-2.0-flash-exp:free", 
+                "openai/gpt-3.5-turbo",
                 conversationContext
         );
 

@@ -32,40 +32,54 @@
     </queries>
 
     <application
+        android:name=".InternetBrowserApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Base.Theme.InternetBrowser"
         android:usesCleartextTraffic="true">
-        <activity
-            android:name=".SplashActivity"
-            android:exported="true"
-            android:theme="@style/Base.Theme.InternetBrowser">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize" />
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- LinkPreviewActivity handles all incoming links -->
+        <activity
+            android:name=".LinkPreviewActivity"
+            android:exported="true"
+            android:label="Internet Browser"
+            android:theme="@style/Theme.InternetBrowser">
+            <intent-filter android:label="@string/app_name">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".AiChatActivity"
             android:exported="false"
             android:label="@string/ai_chat_title"
             android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustResize" />
+        
         <activity
             android:name=".HistoryActivity"
             android:exported="false"
             android:label="@string/history_title"
             android:parentActivityName=".MainActivity" />
+        
         <activity
             android:name=".DownloadsActivity"
             android:exported="false"
