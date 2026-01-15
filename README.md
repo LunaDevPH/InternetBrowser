@@ -48,9 +48,8 @@ It combines essential modern browser features with built-in AI tools to help use
 
 ## Screenshots
 
-![Home Screen](assets/home.png)  
-![Tabs View](assets/tabs.png)  
-
+<img src="assets/home.png" alt="Home Screen" width="300"/>
+<img src="assets/tabs.png" alt="Tabs View" width="300"/>
 
 ---
 
