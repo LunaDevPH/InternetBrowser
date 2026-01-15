@@ -50,7 +50,7 @@ It combines essential modern browser features with built-in AI tools to help use
 
 ![Home Screen](assets/screenshots/home.png)  
 ![Tabs View](assets/screenshots/tabs.png)  
-![AI Explain](assets/screenshots/ai_explain.png)
+
 
 ---
 
