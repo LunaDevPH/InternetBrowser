@@ -1,8 +1,9 @@
-name: Build and Release
+name: Android CI Release
 
 on:
   push:
-    branches: [ "main", "master" ]
+    tags:
+      - "2.0-pr-android15"
 
 jobs:
   build:
@@ -12,36 +13,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # --- Show macOS version ---
-      - name: macOS version task
-        run: |
-          echo "------ macOS version info ------"
-          sw_vers
-          echo "--------------------------------"
-        shell: bash
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
 
-      # --- Load version.yml ---
-      - name: Load version
-        id: version
-        run: |
-          VERSION=$(grep version version.yml | cut -d':' -f2 | tr -d ' ')
-          echo "Version loaded from version.yml: $VERSION"
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
-        shell: bash
-
-      # --- Make gradlew executable ---
       - name: Make gradlew executable
         run: chmod +x ./gradlew
-        shell: bash
 
-      # --- Build Debug APK ---
       - name: Build Debug APK
         run: ./gradlew assembleDebug
-        shell: bash
 
-      # --- Upload Debug APK ---
-      - name: Upload Debug APK
-        uses: actions/upload-artifact@v4
+      - name: Upload APK to Release
+        uses: softprops/action-gh-release@v2
         with:
-          name: debug-apk-${{ env.VERSION }}
-          path: app/build/outputs/apk/debug/app-debug.apk
+          files: app/build/outputs/apk/debug/*.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
