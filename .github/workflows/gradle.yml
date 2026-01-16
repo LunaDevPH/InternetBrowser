@@ -1,74 +1,47 @@
-name: Compile And Release
+name: Build and Release
 
-# Run on every commit
 on:
   push:
     branches: [ "main", "master" ]
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: macos-latest
 
     steps:
-      # 1️⃣ Checkout repo
       - name: Checkout
         uses: actions/checkout@v4
 
-      # 2️⃣ Load version from version.yml and show it in log
+      # --- Show macOS version ---
+      - name: macOS version task
+        run: |
+          echo "------ macOS version info ------"
+          sw_vers
+          echo "--------------------------------"
+        shell: bash
+
+      # --- Load version.yml ---
       - name: Load version
         id: version
         run: |
-          for /f "tokens=2 delims=:" %%a in ('findstr version version.yml') do set VERSION=%%a
-          set VERSION=%VERSION: =%
-          echo -----------------------------
-          echo Version loaded from version.yml: %VERSION%
-          echo -----------------------------
-          echo VERSION=%VERSION%>> %GITHUB_ENV%
-        shell: cmd
+          VERSION=$(grep version version.yml | cut -d':' -f2 | tr -d ' ')
+          echo "Version loaded from version.yml: $VERSION"
+          echo "VERSION=$VERSION" >> $GITHUB_ENV
+        shell: bash
 
-      # 3️⃣ Set up Java 17
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 17
+      # --- Make gradlew executable ---
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+        shell: bash
 
-      # 4️⃣ Set up Android SDK
-      - name: Set up Android SDK
-        uses: android-actions/setup-android@v3
-
-      # 5️⃣ Build Debug APK
+      # --- Build Debug APK ---
       - name: Build Debug APK
-        run: gradlew.bat assembleDebug
-        shell: cmd
+        run: ./gradlew assembleDebug
+        shell: bash
 
-      # 6️⃣ Build Release APK
-      - name: Build Release APK
-        run: gradlew.bat assembleRelease
-        shell: cmd
-
-      # 7️⃣ Build Release AAB
-      - name: Build Release AAB
-        run: gradlew.bat bundleRelease
-        shell: cmd
-
-      # 8️⃣ Upload Debug APK
+      # --- Upload Debug APK ---
       - name: Upload Debug APK
         uses: actions/upload-artifact@v4
         with:
           name: debug-apk-${{ env.VERSION }}
-          path: app\build\outputs\apk\debug\app-debug.apk
-
-      # 9️⃣ Upload Release APK
-      - name: Upload Release APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-apk-${{ env.VERSION }}
-          path: app\build\outputs\apk\release\app-release.apk
-
-      # 🔟 Upload Release AAB
-      - name: Upload Release AAB
-        uses: actions/upload-artifact@v4
-        with:
-          name: release-aab-${{ env.VERSION }}
-          path: app\build\outputs\bundle\release\app-release.aab
+          path: app/build/outputs/apk/debug/app-debug.apk
